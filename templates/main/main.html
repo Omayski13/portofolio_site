@@ -1,140 +1,218 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'style/style.css' %}">
-    <title>Kristiyan Omayski</title>
-</head>
-<body>
-<section class="main">
-    <div class="photo-container">
-        <img class="photo" src="{% static 'images/IMG_1477.jpg' %}">
-    </div>
-    <div class="main-text">
-        <h1>Hi! My name is Kristiyan</h1>
-        <h3>I'm a Python student and Senior Panel Data Analyst at NIQ</h3>
-    </div>
-</section>
 
+{% block content %}
 
-</section>
-
-<section class="about">
-    <img id="coder-photo" src="{% static 'images/coder_png.png' %}">
-
-    <ul>
-        <li><h3>Motivated student with a strong interest in IT</h3></li>
-        <li><h3>Passion for solving problems through code, specializing in Python, Django and PostgreSQL</h3></li>
-        <li><h3>Solid background in data analysis, marketing research</h3></li>
-        <li><h3>Ex-sportsmen and a team player with strong discipline and leadership</h3></li>
-        <li><h3>UEFA "C" certificated football coach</h3></li>
-    </ul>
-
-    <img id="coach-photo" src="{% static 'images/coach_png.png' %}">
-</section>
-
-<section class="skills">
-    <div class="icons-container">
-        <img class="skill-icon" src="{% static 'images/skills_icons/python.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/javascript.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/django.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/postgres.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/docker.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/jenkins.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/git-.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/github.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/terraform.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/pycharm.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/vs-code.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/html.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/css.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/postman.png' %}">
-        <img class="skill-icon" src="{% static 'images/skills_icons/canva.png' %}">
-    </div>
-    <div class="cv">
-        <a id="cv-button">download CV</a>
-    </div>
-</section>
-
-<section class="certificates-section">
-    <div class="diplomas">
-        <img class="diploma" src="{% static 'images/certificates/diploma.jpeg' %}" alt="Diploma">
-    </div>
-
-    <div class="carousel-wrapper" id="carousel">
-        <div class="carousel-track">
-            <img class="certificate" src="{% static 'images/certificates/programming-basics.jpeg' %}">
-            <img class="certificate" src="{% static 'images/certificates/programming-fundamentals.jpeg' %}">
-            <img class="certificate" src="{% static 'images/certificates/python-advanced.jpeg' %}">
-            <img class="certificate" src="{% static 'images/certificates/python-oop.jpeg' %}">
-            <img class="certificate" src="{% static 'images/certificates/html-css.jpeg' %}">
-            <img class="certificate" src="{% static 'images/certificates/js-front-end.jpeg' %}">
-            <img class="certificate" src="{% static 'images/certificates/postgresql.jpeg' %}">
-            <img class="certificate" src="{% static 'images/certificates/python-orm.jpeg' %}">
-            <img class="certificate" src="{% static 'images/certificates/django-basics.jpeg' %}">
-            <img class="certificate" src="{% static 'images/certificates/django-advanced.jpeg' %}">
-            <img class="certificate" src="{% static 'images/certificates/devops.jpeg' %}">
-            <img class="certificate" src="{% static 'images/certificates/containers-and-cloud.jpeg' %}">
+    <section class="main">
+        <div class="photo-container">
+            <img class="photo" src="{% static 'images/IMG_1477.jpg' %}">
         </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <span class="close" id="closeModal">&times;</span>
-        <img class="modal-content" id="modalImg">
-    </div>
-</section>
+        <div class="main-text">
+            <h1>Hi! My name is Kristiyan</h1>
+            <h3>I'm <span id="typed-text"></span><span id="cursor">|</span></h3>
+        </div>
+    </section>
 
 
-<section class="contacts">
-    
-    
-</section>
+    </section>
+
+    <section class="about">
+        <img id="coder-photo" src="{% static 'images/coder_png.png' %}">
+
+        <ul>
+            <li><h3>Motivated student with a strong interest in IT</h3></li>
+            <li><h3>Passion for solving problems through code, specializing in Python, Django and PostgreSQL</h3></li>
+            <li><h3>Solid background in data analysis and marketing research</h3></li>
+            <li><h3>Ex-sportsmen and a team player with strong discipline and leadership</h3></li>
+            <li><h3>UEFA "C" certificated football coach</h3></li>
+        </ul>
+
+        <img id="coach-photo" src="{% static 'images/coach_png.png' %}">
+    </section>
+
+    <section class="skills">
+        <div class="icons-container">
+            <img class="skill-icon" src="{% static 'images/skills_icons/python.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/javascript.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/django.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/postgres.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/docker.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/jenkins.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/git-.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/github.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/terraform.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/pycharm.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/vs-code.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/html.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/css.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/postman.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/canva.png' %}">
+        </div>
+        <div class="cv">
+            <a id="cv-button">download CV</a>
+        </div>
+    </section>
+
+    <section class="certificates-section">
+        <div class="diplomas">
+            <img class="diploma" src="{% static 'images/certificates/diploma.jpeg' %}" alt="Diploma">
+        </div>
+
+        <div class="carousel-wrapper" id="carousel">
+            <div class="carousel-track">
+                <img class="certificate" src="{% static 'images/certificates/programming-basics.jpeg' %}">
+                <img class="certificate" src="{% static 'images/certificates/programming-fundamentals.jpeg' %}">
+                <img class="certificate" src="{% static 'images/certificates/python-advanced.jpeg' %}">
+                <img class="certificate" src="{% static 'images/certificates/python-oop.jpeg' %}">
+                <img class="certificate" src="{% static 'images/certificates/html-css.jpeg' %}">
+                <img class="certificate" src="{% static 'images/certificates/js-front-end.jpeg' %}">
+                <img class="certificate" src="{% static 'images/certificates/postgresql.jpeg' %}">
+                <img class="certificate" src="{% static 'images/certificates/python-orm.jpeg' %}">
+                <img class="certificate" src="{% static 'images/certificates/django-basics.jpeg' %}">
+                <img class="certificate" src="{% static 'images/certificates/django-advanced.jpeg' %}">
+                <img class="certificate" src="{% static 'images/certificates/devops.jpeg' %}">
+                <img class="certificate" src="{% static 'images/certificates/containers-and-cloud.jpeg' %}">
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="modal">
+            <span class="close" id="closeModal">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+    </section>
 
 
+    <section class="contacts">
 
-</body>
-</html>
+        <div class="contacts-text">
+            <h3>Let's connect</h3>
+        </div>
 
-<script>
-    const track = document.querySelector('.carousel-track');
-    const certificates = Array.from(track.children);
+        <div class="icons">
+            <a href="https://github.com/Omayski13" target="_blank">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/github.png' %}">
+            </a>
+            <a href="https://www.linkedin.com/in/omayski/" target="_blank">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/linkedin.png' %}">
+            </a>
+            <a onclick="copyToClipboard('k.omayski@abv.bg')">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/email.png' %}"
+                     title="Click to copy email">
+            </a>
+            <a onclick="copyToClipboard('+359893447354')">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/telephone.png' %}"
+                     title="Click to copy phone">
+            </a>
+            <a href="https://www.facebook.com/KristianOmayski13" target="_blank">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/facebook.png' %}">
+            </a>
+            <a href="https://www.instagram.com/omayski13/" target="_blank">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/instagram.png' %}">
+            </a>
+        </div>
 
-    // Duplicate certificates for infinite scrolling effect
-    certificates.forEach(cert => {
-        const clone = cert.cloneNode(true);
-        track.appendChild(clone);
-    });
+        <div id="copyPopup" class="copy-popup"></div>
 
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modalImg');
-    const closeModal = document.getElementById('closeModal');
+        <div class="contacts-football">
+            <a href=""><img class="contacts-icon" src="{% static 'images/contact-icons/football.png' %}"></a>
+            <a href=""><h3>Visit my football portofolio</h3></a>
+        </div>
 
-    // Show modal when any certificate or diploma is clicked
-    const openModal = (src) => {
-        modal.style.display = 'block';
-        modalImg.src = src;
-    };
+    </section>
 
-    // Click on certificate
-    document.querySelectorAll('.certificate').forEach(img => {
-        img.addEventListener('click', () => openModal(img.src));
-    });
 
-    // Click on diploma
-    const diplomaImg = document.querySelector('.diploma');
-    diplomaImg.addEventListener('click', () => openModal(diplomaImg.src));
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const certificates = Array.from(track.children);
 
-    // Close modal
-    closeModal.onclick = () => {
-        modal.style.display = 'none';
-    };
+        // Duplicate certificates for infinite scrolling effect
+        certificates.forEach(cert => {
+            const clone = cert.cloneNode(true);
+            track.appendChild(clone);
+        });
 
-    window.onclick = (event) => {
-        if (event.target == modal) {
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modalImg');
+        const closeModal = document.getElementById('closeModal');
+
+        // Show modal when any certificate or diploma is clicked
+        const openModal = (src) => {
+            modal.style.display = 'block';
+            modalImg.src = src;
+        };
+
+        // Click on certificate
+        document.querySelectorAll('.certificate').forEach(img => {
+            img.addEventListener('click', () => openModal(img.src));
+        });
+
+        // Click on diploma
+        const diplomaImg = document.querySelector('.diploma');
+        diplomaImg.addEventListener('click', () => openModal(diplomaImg.src));
+
+        // Close modal
+        closeModal.onclick = () => {
             modal.style.display = 'none';
+        };
+
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        const roles = [
+            "Python student at SoftUni.",
+            "a Senior Panel Data Analyst at Nielsen IQ.",
+            'a Football Coach at UFC "Sofia."'
+        ];
+
+        let currentIndex = 0;
+        let currentText = '';
+        let isDeleting = false;
+        const typedText = document.getElementById("typed-text");
+
+        function type() {
+            const fullText = roles[currentIndex];
+
+            if (isDeleting) {
+                currentText = fullText.substring(0, currentText.length - 1);
+            } else {
+                currentText = fullText.substring(0, currentText.length + 1);
+            }
+
+            typedText.textContent = currentText;
+
+            let speed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && currentText === fullText) {
+                speed = 1500; // Pause at full text
+                isDeleting = true;
+            } else if (isDeleting && currentText === '') {
+                isDeleting = false;
+                currentIndex = (currentIndex + 1) % roles.length;
+                speed = 500;
+            }
+
+            setTimeout(type, speed);
         }
-    };
-</script>
+
+        document.addEventListener("DOMContentLoaded", type);
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const popup = document.getElementById("copyPopup");
+                popup.textContent = `Copied to clipboard: ${text}`;
+                popup.classList.add("show");
+                setTimeout(() => popup.classList.remove("show"), 2000);
+            }).catch(err => {
+                alert("Clipboard copy failed: " + err);
+            });
+        }
+
+
+    </script>
+
+{% endblock %}

@@ -14,9 +14,12 @@ section {
     box-sizing: border-box;
 }
 
+/*........main.........*/
+
 
 .main {
-    background-color: cornflowerblue;
+    background-color: #353839;
+    color: #C7EDE6;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -43,10 +46,15 @@ section {
 
 .main-text {
     flex: 0.6; /* 60% of the section */
+
 }
 
 h1{
     font-size: 2.5rem;
+}
+
+.main-text h3{
+    font-size: 1.35rem;
 }
 
 
@@ -64,8 +72,10 @@ h1{
     height: 330px;
 }
 
+/*........skills.........*/
+
 .skills{
-    background-color: 	#1A1A1A;
+    background-color: #1A2421;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -85,7 +95,8 @@ h1{
 #cv-button{
     font-size: 1.2rem;
     font-weight: bold;
-    background-color: cornflowerblue;
+    background-color: darkgrey;
+    color: #1A2421;
     padding: 1rem 3rem;
     border: 2px solid whitesmoke;
     border-radius: 15px;
@@ -94,48 +105,26 @@ h1{
 
 #cv-button:hover{
     font-weight: bold;
-    background-color: #2F59A7 ;
-    color: white;
+    background-color: #C7EDE6 ;
+    color: #1A2421;
     padding: 1rem 3rem;
     border: 5px solid whitesmoke;
     border-radius: 15px;
 }
 
-section.certificates{
-    background-color: #3C4048;
-}
+/*........certificates.........*/
 
-.contacts{
-    background-color: 	#101C2C;
-}
-
-
-/* section.certificates{
-    display: block;
-    text-align: center;
-
-
-
-}
-
-img.diploma{
-    height: 450px;
-}
-
-img.certificate{
-    height: 350px;
-} */
 
 .certificates-section {
     display: block;
     text-align: center;
     padding: 2rem;
-    background-color: #b0c4de;
+    background-color: #708090;
     text-align: center;
 }
 
 .diplomas img {
-    max-width: 300px;
+    max-width: 250px;
     margin-bottom: 2rem;
     border-radius: 8px;
 }
@@ -210,6 +199,64 @@ img.certificate{
     cursor: pointer;
 }
 
+/*........contacts.........*/
+
+.contacts{
+    background-color: 	#353839;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contacts-text h3{
+    color: #C7EDE6;
+    font-size: 5rem;
+}
+
+.contacts-football{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacts-football a{
+    text-decoration: none;
+    color: #C7EDE6;
+}
 
 
+.copy-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #C7EDE6;
+    color: #353839;
+    padding: 10px 15px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
 
+.copy-popup.show {
+    opacity: 1;
+  }
+
+.contacts-icon {
+    height: auto;
+    width: 120px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-decoration: none;
+  }
+
+.contacts-icon:hover {
+    transform: scale(1.1);
+  }
+
+.icons a{
+    text-decoration: none;
+}
