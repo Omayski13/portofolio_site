@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'style/style.css' %}">
-    <title>Title</title>
+    <title>Kristiyan Omayski</title>
 </head>
 <body>
 <section class="main">
@@ -58,10 +58,35 @@
     </div>
 </section>
 
-<section class="certificates">
-    
-    
+<section class="certificates-section">
+    <div class="diplomas">
+        <img class="diploma" src="{% static 'images/certificates/diploma.jpeg' %}" alt="Diploma">
+    </div>
+
+    <div class="carousel-wrapper" id="carousel">
+        <div class="carousel-track">
+            <img class="certificate" src="{% static 'images/certificates/programming-basics.jpeg' %}">
+            <img class="certificate" src="{% static 'images/certificates/programming-fundamentals.jpeg' %}">
+            <img class="certificate" src="{% static 'images/certificates/python-advanced.jpeg' %}">
+            <img class="certificate" src="{% static 'images/certificates/python-oop.jpeg' %}">
+            <img class="certificate" src="{% static 'images/certificates/html-css.jpeg' %}">
+            <img class="certificate" src="{% static 'images/certificates/js-front-end.jpeg' %}">
+            <img class="certificate" src="{% static 'images/certificates/postgresql.jpeg' %}">
+            <img class="certificate" src="{% static 'images/certificates/python-orm.jpeg' %}">
+            <img class="certificate" src="{% static 'images/certificates/django-basics.jpeg' %}">
+            <img class="certificate" src="{% static 'images/certificates/django-advanced.jpeg' %}">
+            <img class="certificate" src="{% static 'images/certificates/devops.jpeg' %}">
+            <img class="certificate" src="{% static 'images/certificates/containers-and-cloud.jpeg' %}">
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
 </section>
+
 
 <section class="contacts">
     
@@ -72,3 +97,44 @@
 
 </body>
 </html>
+
+<script>
+    const track = document.querySelector('.carousel-track');
+    const certificates = Array.from(track.children);
+
+    // Duplicate certificates for infinite scrolling effect
+    certificates.forEach(cert => {
+        const clone = cert.cloneNode(true);
+        track.appendChild(clone);
+    });
+
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const closeModal = document.getElementById('closeModal');
+
+    // Show modal when any certificate or diploma is clicked
+    const openModal = (src) => {
+        modal.style.display = 'block';
+        modalImg.src = src;
+    };
+
+    // Click on certificate
+    document.querySelectorAll('.certificate').forEach(img => {
+        img.addEventListener('click', () => openModal(img.src));
+    });
+
+    // Click on diploma
+    const diplomaImg = document.querySelector('.diploma');
+    diplomaImg.addEventListener('click', () => openModal(diplomaImg.src));
+
+    // Close modal
+    closeModal.onclick = () => {
+        modal.style.display = 'none';
+    };
+
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+</script>

@@ -1,0 +1,215 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+
+.main {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh; /* Make it full screen height if desired */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.photo {
+    width: 100%; /* Full width inside its container */
+    height: auto;
+    max-width: 300px; /* Optional: limit max size */
+    aspect-ratio: 1; /* Maintain square aspect ratio */
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.photo-container {
+    flex: 0.4; /* 40% of the section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-text {
+    flex: 0.6; /* 60% of the section */
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+
+.about {
+    background-color: darkgrey;
+    display: flex;
+    justify-content: space-around;
+}
+
+#coder-photo{
+    height: 400px;
+}
+
+#coach-photo{
+    height: 330px;
+}
+
+.skills{
+    background-color: 	#1A1A1A;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.skill-icon{
+    height: 50px;
+    padding: 1rem;
+    margin-bottom: 5rem;
+}
+
+
+.cv{
+        margin-top: 5rem;
+}
+
+#cv-button{
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    padding: 1rem 3rem;
+    border: 2px solid whitesmoke;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#cv-button:hover{
+    font-weight: bold;
+    background-color: #2F59A7 ;
+    color: white;
+    padding: 1rem 3rem;
+    border: 5px solid whitesmoke;
+    border-radius: 15px;
+}
+
+section.certificates{
+    background-color: #3C4048;
+}
+
+.contacts{
+    background-color: 	#101C2C;
+}
+
+
+/* section.certificates{
+    display: block;
+    text-align: center;
+
+
+
+}
+
+img.diploma{
+    height: 450px;
+}
+
+img.certificate{
+    height: 350px;
+} */
+
+.certificates-section {
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    background-color: #b0c4de;
+    text-align: center;
+}
+
+.diplomas img {
+    max-width: 300px;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.diplomas img:hover{
+    cursor: pointer;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1rem;
+    animation: scroll 30s linear infinite;
+}
+
+.certificate {
+    width: 220px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.certificate:hover {
+    transform: scale(1.02);
+}
+
+/* Autoscroll animation */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Pause on hover */
+.carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    text-align: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255,255,255,0.2);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
