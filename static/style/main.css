@@ -2,7 +2,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    /*height: 100%;*/
 }
 
 section {
@@ -14,10 +14,48 @@ section {
     box-sizing: border-box;
 }
 
+/*........header.........*/
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #C7EDE6;
+}
+
+/* Links inside header */
+header a {
+    text-decoration: none;
+    color: #353839;
+    font-size: 1.3rem;
+    margin: 0.4rem;
+    padding: 0 1.5rem;
+}
+
+header a:hover {
+    color: whitesmoke;
+    background-color: #1A2421;
+    color: #C7EDE6;
+    border-radius: 8px;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent margin collapse */
+body {
+    margin: 0;
+}
+
+
 /*........main.........*/
 
 
-.main {
+#main {
     background-color: #353839;
     color: #C7EDE6;
     display: flex;
@@ -57,9 +95,10 @@ h1{
     font-size: 1.35rem;
 }
 
+/*........about.........*/
 
-.about {
-    background-color: darkgrey;
+#about {
+    background-color: lightgrey;
     display: flex;
     justify-content: space-around;
 }
@@ -74,7 +113,7 @@ h1{
 
 /*........skills.........*/
 
-.skills{
+#skills{
     background-color: #1A2421;
     display: flex;
     text-align: center;
@@ -115,7 +154,7 @@ h1{
 /*........certificates.........*/
 
 
-.certificates-section {
+#certificates {
     display: block;
     text-align: center;
     padding: 2rem;
@@ -201,7 +240,7 @@ h1{
 
 /*........contacts.........*/
 
-.contacts{
+#contacts{
     background-color: 	#353839;
     display: flex;
     flex-direction: column ;
