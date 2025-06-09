@@ -186,7 +186,7 @@
             let speed = isDeleting ? 50 : 100;
 
             if (!isDeleting && currentText === fullText) {
-                speed = 1500; // Pause at full text
+                speed = 2000; // Pause at full text
                 isDeleting = true;
             } else if (isDeleting && currentText === '') {
                 isDeleting = false;
