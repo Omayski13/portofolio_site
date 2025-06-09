@@ -1,0 +1,62 @@
+/*........ main ........*/
+
+
+#football-main{
+    background-color: #353839;
+    color: #C7EDE6;
+}
+
+/*........ about ........*/
+
+#football-about{
+    background-color: lightgrey;
+    display: flex;
+    justify-content: space-around;
+}
+
+ul.football{
+    text-align: left;
+}
+
+.football-cv{
+    margin: 4rem 0 0 0 ;
+    text-align: center;
+}
+
+#football-cv-button{
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #759238;
+    color: #1A2421;
+    padding: 1rem 3rem;
+    border: 2px solid whitesmoke;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#football-cv-button:hover{
+    font-weight: bold;
+    background-color: #353839 ;
+    color: #C7EDE6;
+    padding: 1rem 3rem;
+    border: 5px solid whitesmoke;
+    border-radius: 15px;
+}
+
+/*........ certificates ........*/
+
+#football-certificates{
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    background-color: #708090;
+    text-align: center;
+}
+
+img.licence{
+    max-height: 500px;
+}
+
+
+
+
