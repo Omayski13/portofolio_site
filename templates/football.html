@@ -1,10 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-</body>
-</html>
+
+{% block content %}
+
+    <section id="football-main">
+        <div class="photo-container">
+            <img class="photo" src="{% static 'images/kristiyan-omayski-coach.jpg' %}">
+        </div>
+        <div class="main-text">
+            <h1>Hi! My name is Kristiyan</h1>
+            <h3><span id="typed-text"></span><span id="cursor">|</span></h3>
+        </div>
+    </section>
+
+
+    <section id="football-about">
+        <img id="coder-photo" src="{% static 'images/football-coach.png' %}">
+
+        <div>
+            <ul class="football">
+                <li><h3>UEFA "C" certificated football coach</h3></li>
+                <li><h3>Coaching experience spanning from 2017 to the present</h3></li>
+                <li><h3>Solid coaching background across U5 to U11 age groups</h3></li>
+                <li><h3>Strong interest in technical development for 5 to 10 years old players</h3></li>
+                <li><h3>Certified Python Software Engineer with a keen interest in programming</h3></li>
+            </ul>
+            
+            <div class="football-cv">
+                <a id="football-cv-button">download CV</a>
+            </div>
+        </div>
+    
+    </section>
+    
+     <section id="football-certificates">
+        <div class="football-licences">
+            <img class="licence" src="{% static 'images/certificates/football_certificates/Uefa-C.jpg' %}" alt="licence">
+            <img class="licence" src="{% static 'images/certificates/football_certificates/National-C.jpg' %}" alt="licence">
+            <img class="licence" src="{% static 'images/certificates/football_certificates/udostoverenie.jpg' %}" alt="licence">
+        </div>
+     </section>
+
+
+
+
+
+    <script>
+
+        const roles = [
+            "Welcome to my football page!",
+            "I'm a Football Coach at UFC \"Sofia\"."
+        ];
+
+        let currentIndex = 0;
+        let currentText = '';
+        let isDeleting = false;
+        const typedText = document.getElementById("typed-text");
+
+        function type() {
+            const fullText = roles[currentIndex];
+
+            if (isDeleting) {
+                currentText = fullText.substring(0, currentText.length - 1);
+            } else {
+                currentText = fullText.substring(0, currentText.length + 1);
+            }
+
+            typedText.textContent = currentText;
+
+            let speed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && currentText === fullText) {
+                speed = 2000; // Pause at full text
+                isDeleting = true;
+            } else if (isDeleting && currentText === '') {
+                isDeleting = false;
+                currentIndex = (currentIndex + 1) % roles.length;
+                speed = 500;
+            }
+
+            setTimeout(type, speed);
+        }
+
+        document.addEventListener("DOMContentLoaded", type);
+
+    </script>
+
+
+{% endblock %}
