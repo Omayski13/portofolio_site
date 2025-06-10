@@ -43,20 +43,40 @@ ul.football{
     border-radius: 15px;
 }
 
-/*........ certificates ........*/
+.football-licences {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the certificates */
+    gap: 1rem; /* Add spacing between images */
+    padding-left: 2rem;
+}
 
-#football-certificates{
+img#football-coach-photo{
+    max-width: 280px;
+}
+
+
+img.licence{
+    max-height: 250px;
+    display: block; /* Ensures images take up full width */
+    margin: 0 auto 1rem auto; /* Centers each image with spacing */
+    max-width: 100%; /* Ensures images resize well */
+}
+
+img.udostoverenie{
+    max-height: 200px;
+    display: block; /* Ensures images take up full width */
+    margin: 0 auto 1rem auto; /* Centers each image with spacing */
+    max-width: 100%; /* Ensures images resize well */
+}
+
+/*........ find-me ........*/
+
+#football-find-me{
     display: block;
     text-align: center;
     padding: 2rem;
     background-color: #708090;
     text-align: center;
 }
-
-img.licence{
-    max-height: 500px;
-}
-
-
-
 

@@ -16,7 +16,7 @@
 
 
     <section id="football-about">
-        <img id="coder-photo" src="{% static 'images/football-coach.png' %}">
+        <img id="football-coach-photo" src="{% static 'images/football-coach.png' %}">
 
         <div>
             <ul class="football">
@@ -31,15 +31,19 @@
                 <a id="football-cv-button">download CV</a>
             </div>
         </div>
-    
-    </section>
-    
-     <section id="football-certificates">
+
         <div class="football-licences">
             <img class="licence" src="{% static 'images/certificates/football_certificates/Uefa-C.jpg' %}" alt="licence">
             <img class="licence" src="{% static 'images/certificates/football_certificates/National-C.jpg' %}" alt="licence">
-            <img class="licence" src="{% static 'images/certificates/football_certificates/udostoverenie.jpg' %}" alt="licence">
+            <img class="udostoverenie" src="{% static 'images/certificates/football_certificates/udostoverenie.jpg' %}" alt="licence">
         </div>
+
+
+    
+    </section>
+    
+     <section id="football-find-me">
+        <iframe src="https://calendar.google.com/calendar/embed?src=175a7b8fac526ce6d381f3fb1b7058295d23edc0c750da5e1cf7badbb93e2c70%40group.calendar.google.com&ctz=Europe%2FSofia" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
      </section>
 
 
@@ -83,7 +87,48 @@
             setTimeout(type, speed);
         }
 
-        document.addEventListener("DOMContentLoaded", type);
+
+        // Create modal elements dynamically
+const modal = document.createElement("div");
+modal.id = "modal";
+modal.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); text-align:center; z-index:1000";
+
+const modalImg = document.createElement("img");
+modalImg.id = "modalImg";
+modalImg.style.cssText = "max-width:90%; max-height:90%; margin:auto; display:block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)";
+
+const closeModal = document.createElement("span");
+closeModal.id = "closeModal";
+closeModal.innerHTML = "&times;";
+closeModal.style.cssText = "position:absolute; top:10px; right:20px; font-size:30px; color:white; cursor:pointer";
+
+modal.appendChild(modalImg);
+modal.appendChild(closeModal);
+document.body.appendChild(modal);
+
+// Function to open modal
+const openModal = (src) => {
+    modal.style.display = "block";
+    modalImg.src = src;
+};
+
+// Attach click event to all images with class "licence" or "udostoverenie"
+document.querySelectorAll(".licence, .udostoverenie").forEach(img => {
+    img.addEventListener("click", () => openModal(img.src));
+});
+
+// Close modal when clicking the close button
+closeModal.onclick = () => {
+    modal.style.display = "none";
+};
+
+// Close modal when clicking outside the image
+window.onclick = (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+
 
     </script>
 
