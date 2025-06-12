@@ -1,13 +1,17 @@
 services:
   - type: web
-    name: django-site
+    name: django-portfolio-site
     env: python
     buildCommand: |
       pip install -r portofolio_kriso/requirements.txt
     startCommand: |
-      cd portofolio_kriso && gunicorn portfolio_kriso.wsgi:application
+      cd portofolio_kriso && python manage.py collectstatic --noinput && gunicorn portofolio_kriso.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: portfolio_kriso.settings
+        value: portofolio_kriso.settings
       - key: PYTHON_VERSION
         value: 3.10
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
