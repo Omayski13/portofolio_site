@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: django-site
+    env: python
+    buildCommand: |
+      pip install -r portofolio_kriso/requirements.txt
+    startCommand: |
+      cd portofolio_kriso && gunicorn portfolio_kriso.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: portfolio_kriso.settings
+      - key: PYTHON_VERSION
+        value: 3.10
