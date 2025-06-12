@@ -26,10 +26,10 @@ ul.football{
 #football-cv-button{
     font-size: 1.2rem;
     font-weight: bold;
-    background-color: #759238;
-    color: #1A2421;
+    background-color: #C7EDE6;
+    color: #353839;
     padding: 1rem 3rem;
-    border: 2px solid whitesmoke;
+    border: 3px solid #353839;
     border-radius: 15px;
     cursor: pointer;
 }
@@ -39,7 +39,7 @@ ul.football{
     background-color: #353839 ;
     color: #C7EDE6;
     padding: 1rem 3rem;
-    border: 5px solid whitesmoke;
+    border: 6px solid #C7EDE6;
     border-radius: 15px;
 }
 
@@ -57,14 +57,16 @@ img#football-coach-photo{
 
 
 img.licence{
-    max-height: 250px;
+    cursor: pointer;
+    max-height: 220px;
     display: block; /* Ensures images take up full width */
     margin: 0 auto 1rem auto; /* Centers each image with spacing */
     max-width: 100%; /* Ensures images resize well */
 }
 
 img.udostoverenie{
-    max-height: 200px;
+    cursor: pointer;
+    max-height: 180px;
     display: block; /* Ensures images take up full width */
     margin: 0 auto 1rem auto; /* Centers each image with spacing */
     max-width: 100%; /* Ensures images resize well */
@@ -76,7 +78,199 @@ img.udostoverenie{
     display: block;
     text-align: center;
     padding: 2rem;
-    background-color: #708090;
+    background-color: #1A2421;
     text-align: center;
 }
 
+.find-me-text{
+    color: #C7EDE6;
+}
+
+#football-contacts{
+    background-color: 	#708090;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contacts-text h3{
+    color: #C7EDE6;
+    font-size: 5rem;
+}
+
+.contacts-football{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacts-football a{
+    text-decoration: none;
+    color: #C7EDE6;
+}
+
+
+.copy-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #C7EDE6;
+    color: #353839;
+    padding: 10px 15px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+.copy-popup.show {
+    opacity: 1;
+  }
+
+.contacts-icon {
+    height: auto;
+    width: 120px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-decoration: none;
+  }
+
+#contacts .icons{
+    text-align: center;
+}
+
+.contacts-icon:hover {
+    transform: scale(1.1);
+  }
+
+.icons a{
+    text-decoration: none;
+}
+
+
+/* ======= Responsive Styles ======= */
+
+/* ---- Tablet (up to 1024px) ---- */
+@media (max-width: 1024px) {
+    #football-about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    img#football-coach-photo {
+        max-width: 200px;
+        margin-bottom: 1rem;
+    }
+
+    .football-cv {
+        margin: 2rem 0;
+    }
+
+    .football-licences {
+        padding-left: 0;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .football-licences img {
+        max-width: 45%;
+    }
+
+    .contacts-text h3 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .contacts-football {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contacts-icon {
+        width: 90px;
+        padding: 1rem;
+    }
+
+    iframe {
+        width: 100% !important;
+        height: 400px !important;
+    }
+}
+
+/* ---- Phone (up to 768px) ---- */
+@media (max-width: 768px) {
+    #football-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        padding: 1.5rem;
+    }
+
+    img.photo{
+        max-width: 200px;
+    }
+
+    ul.football {
+        padding: 0 1rem;
+    }
+
+    #football-cv-button {
+        font-size: 0.7rem;
+        padding: 0.8rem 2rem;
+    }
+
+    img#football-coach-photo{
+        max-width: 100px;
+    }
+
+    .football-cv{
+        padding: 1rem 0;
+    }
+    img.licence{
+        max-height: 120px;
+    }
+
+    img.udostoverenie{
+        max-width: 120px !important;
+    }
+
+    .contacts-other-page{
+        padding: 3rem 0;
+    }
+
+    .contacts-text h3 {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .icons{
+        text-align: center;
+    }
+    .contacts-icon {
+        width: 70px;
+        /*padding: 0.5rem;*/
+    }
+
+    .football-cv {
+        margin: 1.5rem 0;
+    }
+
+    .football-licences img {
+        max-width: 80%;
+    }
+
+    iframe {
+        width: 100% !important;
+        height: 300px !important;
+    }
+}

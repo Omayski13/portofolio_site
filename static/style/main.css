@@ -191,7 +191,7 @@ ul{
 }
 
 .certificate {
-    width: 220px;
+    width: 210px;
     height: auto;
     flex-shrink: 0;
     border-radius: 8px;
@@ -261,13 +261,13 @@ ul{
     font-size: 5rem;
 }
 
-.contacts-football{
+.contacts-other-page{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.contacts-football a{
+.contacts-other-page a{
     text-decoration: none;
     color: #C7EDE6;
 }
@@ -342,8 +342,12 @@ ul{
     }
 
     #main {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
+        height: 100vh;
         padding: 1rem;
     }
 
@@ -393,6 +397,10 @@ ul{
         align-items: center;
         text-align: center;
     }
+
+    .contacts-other-page{
+        padding: 1rem 0;
+    }
 }
 
 
@@ -412,7 +420,7 @@ ul{
     }
 
     #main {
-        flex-direction: column-reverse; /* 👈 Puts image ABOVE the text */
+        flex-direction: column; /* 👈 Puts image ABOVE the text */
         padding: 1rem 0.5rem;
         gap: 1rem;
     }
@@ -469,6 +477,11 @@ ul{
     .contacts-icon {
         width: 80px;
         padding: 1rem;
+    }
+
+    .contacts-other-page{
+        padding: 3rem 0;
+        text-align: center;
     }
 }
 

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base-football.html' %}
 {% load static %}
 
 
@@ -9,8 +9,10 @@
             <img class="photo" src="{% static 'images/kristiyan-omayski-coach.jpg' %}">
         </div>
         <div class="main-text">
-            <h1>Hi! My name is Kristiyan</h1>
-            <h3><span id="typed-text"></span><span id="cursor">|</span></h3>
+            <div class="main-text">
+                <h1>Hi! My name is Kristiyan</h1>
+                <h3><span id="typed-text"></span><span id="cursor">|</span></h3>
+            </div>
         </div>
     </section>
 
@@ -22,29 +24,75 @@
             <ul class="football">
                 <li><h3>UEFA "C" certificated football coach</h3></li>
                 <li><h3>Coaching experience spanning from 2017 to the present</h3></li>
-                <li><h3>Solid coaching background across U5 to U11 age groups</h3></li>
+                <li><h3>Solid coaching background across U5 to U13 age groups</h3></li>
                 <li><h3>Strong interest in technical development for 5 to 10 years old players</h3></li>
                 <li><h3>Certified Python Software Engineer with a keen interest in programming</h3></li>
             </ul>
-            
+
             <div class="football-cv">
-                <a id="football-cv-button">download CV</a>
+                <a href="{% static 'CVs/Kristiyan Omayski-football CV.pdf' %}" id="football-cv-button" download>Download Football CV</a>
             </div>
         </div>
 
         <div class="football-licences">
-            <img class="licence" src="{% static 'images/certificates/football_certificates/Uefa-C.jpg' %}" alt="licence">
-            <img class="licence" src="{% static 'images/certificates/football_certificates/National-C.jpg' %}" alt="licence">
-            <img class="udostoverenie" src="{% static 'images/certificates/football_certificates/udostoverenie.jpg' %}" alt="licence">
+            <img class="licence" src="{% static 'images/certificates/football_certificates/Uefa-C.jpg' %}"
+                 alt="licence">
+            <img class="licence" src="{% static 'images/certificates/football_certificates/National-C.jpg' %}"
+                 alt="licence">
+            <img class="udostoverenie" src="{% static 'images/certificates/football_certificates/udostoverenie.jpg' %}"
+                 alt="licence">
         </div>
 
 
-    
     </section>
-    
-     <section id="football-find-me">
-        <iframe src="https://calendar.google.com/calendar/embed?src=175a7b8fac526ce6d381f3fb1b7058295d23edc0c750da5e1cf7badbb93e2c70%40group.calendar.google.com&ctz=Europe%2FSofia" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-     </section>
+
+    <section id="football-find-me">
+
+        <h1 class="find-me-text">Find me on the pitch</h1>
+        <iframe src="https://calendar.google.com/calendar/embed?src=175a7b8fac526ce6d381f3fb1b7058295d23edc0c750da5e1cf7badbb93e2c70%40group.calendar.google.com&ctz=Europe%2FSofia&wkst=2"
+                style="border: 0" width="820" height="450" frameborder="0" scrolling="no"></iframe>
+        <h3 class="find-me-text">This is my football calendar with places and time for my training sessions</h3>
+
+    </section>
+
+    <section id="football-contacts">
+
+        <div class="contacts-text">
+            <h3>Let's connect</h3>
+        </div>
+
+        <div class="icons">
+            <a href="https://github.com/Omayski13" target="_blank">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/github.png' %}">
+            </a>
+            <a href="https://www.linkedin.com/in/omayski/" target="_blank">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/linkedin.png' %}">
+            </a>
+            <a onclick="copyToClipboard('k.omayski@abv.bg')">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/email.png' %}"
+                     title="Click to copy email">
+            </a>
+            <a onclick="copyToClipboard('+359893447354')">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/telephone.png' %}"
+                     title="Click to copy phone">
+            </a>
+            <a href="https://www.facebook.com/KristianOmayski13" target="_blank">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/facebook.png' %}">
+            </a>
+            <a href="https://www.instagram.com/omayski13/" target="_blank">
+                <img class="contacts-icon" src="{% static 'images/contact-icons/instagram.png' %}">
+            </a>
+        </div>
+
+        <div id="copyPopup" class="copy-popup"></div>
+
+        <div class="contacts-other-page">
+            <a href="{% url 'main' %}"><img class="contacts-icon"
+                                            src="{% static 'images/contact-icons/work-on-computer.png' %}"></a>
+            <a href="{% url 'main' %}"><h3>Visit main portofolio</h3></a>
+        </div>
+
+    </section>
 
 
 
@@ -87,47 +135,60 @@
             setTimeout(type, speed);
         }
 
+        document.addEventListener("DOMContentLoaded", type);
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const popup = document.getElementById("copyPopup");
+                popup.textContent = `Copied to clipboard: ${text}`;
+                popup.classList.add("show");
+                setTimeout(() => popup.classList.remove("show"), 2000);
+            }).catch(err => {
+                alert("Clipboard copy failed: " + err);
+            });
+        }
+
 
         // Create modal elements dynamically
-const modal = document.createElement("div");
-modal.id = "modal";
-modal.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); text-align:center; z-index:1000";
+        const modal = document.createElement("div");
+        modal.id = "modal";
+        modal.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); text-align:center; z-index:1000";
 
-const modalImg = document.createElement("img");
-modalImg.id = "modalImg";
-modalImg.style.cssText = "max-width:90%; max-height:90%; margin:auto; display:block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)";
+        const modalImg = document.createElement("img");
+        modalImg.id = "modalImg";
+        modalImg.style.cssText = "max-width:90%; max-height:90%; margin:auto; display:block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)";
 
-const closeModal = document.createElement("span");
-closeModal.id = "closeModal";
-closeModal.innerHTML = "&times;";
-closeModal.style.cssText = "position:absolute; top:10px; right:20px; font-size:30px; color:white; cursor:pointer";
+        const closeModal = document.createElement("span");
+        closeModal.id = "closeModal";
+        closeModal.innerHTML = "&times;";
+        closeModal.style.cssText = "position:absolute; top:10px; right:20px; font-size:30px; color:white; cursor:pointer";
 
-modal.appendChild(modalImg);
-modal.appendChild(closeModal);
-document.body.appendChild(modal);
+        modal.appendChild(modalImg);
+        modal.appendChild(closeModal);
+        document.body.appendChild(modal);
 
-// Function to open modal
-const openModal = (src) => {
-    modal.style.display = "block";
-    modalImg.src = src;
-};
+        // Function to open modal
+        const openModal = (src) => {
+            modal.style.display = "block";
+            modalImg.src = src;
+        };
 
-// Attach click event to all images with class "licence" or "udostoverenie"
-document.querySelectorAll(".licence, .udostoverenie").forEach(img => {
-    img.addEventListener("click", () => openModal(img.src));
-});
+        // Attach click event to all images with class "licence" or "udostoverenie"
+        document.querySelectorAll(".licence, .udostoverenie").forEach(img => {
+            img.addEventListener("click", () => openModal(img.src));
+        });
 
-// Close modal when clicking the close button
-closeModal.onclick = () => {
-    modal.style.display = "none";
-};
+        // Close modal when clicking the close button
+        closeModal.onclick = () => {
+            modal.style.display = "none";
+        };
 
-// Close modal when clicking outside the image
-window.onclick = (event) => {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-};
+        // Close modal when clicking outside the image
+        window.onclick = (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
 
 
     </script>

@@ -30,7 +30,7 @@ DEBUG = os.getenv('DEBUG',config('DEBUG')) == 'True'
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'abf7-92-247-253-43.ngrok-free.app'
+    '2d2b-92-247-253-43.ngrok-free.app'
 ]
 
 

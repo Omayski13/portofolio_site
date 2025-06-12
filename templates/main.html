@@ -48,7 +48,7 @@
             <img class="skill-icon" src="{% static 'images/skills_icons/canva.png' %}">
         </div>
         <div class="cv">
-            <a id="cv-button">download CV</a>
+            <a href="{% static 'CVs/Kristiyan Omayski.pdf' %}" id="cv-button" download>download CV</a>
         </div>
     </section>
 
@@ -113,10 +113,10 @@
 
         <div id="copyPopup" class="copy-popup"></div>
 
-{#        <div class="contacts-football">#}
-{#            <a href=""><img class="contacts-icon" src="{% static 'images/contact-icons/football.png' %}"></a>#}
-{#            <a href=""><h3>Visit my football portofolio</h3></a>#}
-{#        </div>#}
+        <div class="contacts-other-page">
+            <a href="{% url 'football' %}"><img class="contacts-icon" src="{% static 'images/contact-icons/football.png' %}"></a>
+            <a href="{% url 'football' %}"><h3>Visit my football portofolio</h3></a>
+        </div>
 
     </section>
 
