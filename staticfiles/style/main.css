@@ -1,0 +1,487 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    /*height: 100%;*/
+}
+
+section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/*........header.........*/
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #C7EDE6;
+}
+
+/* Links inside header */
+header a {
+    text-decoration: none;
+    color: #353839;
+    font-size: 1.3rem;
+    margin: 0.4rem;
+    padding: 0 1.5rem;
+}
+
+header a:hover {
+    color: whitesmoke;
+    background-color: #1A2421;
+    color: #C7EDE6;
+    border-radius: 8px;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent margin collapse */
+body {
+    margin: 0;
+}
+
+
+/*........main.........*/
+
+
+#main {
+    background-color: #353839;
+    color: #C7EDE6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh; /* Make it full screen height if desired */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.photo {
+    width: 100%; /* Full width inside its container */
+    height: auto;
+    max-width: 300px; /* Optional: limit max size */
+    aspect-ratio: 1; /* Maintain square aspect ratio */
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.photo-container {
+    flex: 0.4; /* 40% of the section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-text {
+    flex: 0.6; /* 60% of the section */
+
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+.main-text h3{
+    font-size: 1.35rem;
+}
+
+/*........about.........*/
+
+#about {
+    background-color: lightgrey;
+    display: flex;
+    justify-content: space-around;
+}
+
+#coder-photo{
+    height: 400px;
+}
+
+ul{
+    text-align: left;
+}
+
+#coach-photo{
+    height: 330px;
+}
+
+/*........skills.........*/
+
+#skills{
+    background-color: #1A2421;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.skill-icon{
+    height: 50px;
+    padding: 1rem;
+    margin-bottom: 5rem;
+}
+
+
+.cv{
+        margin-top: 5rem;
+}
+
+#cv-button{
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: darkgrey;
+    color: #1A2421;
+    padding: 1rem 3rem;
+    border: 2px solid whitesmoke;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#cv-button:hover{
+    font-weight: bold;
+    background-color: #C7EDE6 ;
+    color: #1A2421;
+    padding: 1rem 3rem;
+    border: 5px solid whitesmoke;
+    border-radius: 15px;
+}
+
+/*........certificates.........*/
+
+
+#certificates {
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    background-color: #708090;
+    text-align: center;
+
+}
+
+.diplomas img {
+    max-width: 250px;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+
+}
+
+.diplomas img:hover{
+    cursor: pointer;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1rem;
+    animation: scroll 30s linear infinite;
+}
+
+.certificate {
+    width: 210px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    z-index: 1;
+}
+
+.certificate:hover {
+    transform: scale(1.02);
+}
+
+/* Autoscroll animation */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Pause on hover */
+.carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    text-align: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255,255,255,0.2);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/*........contacts.........*/
+
+#contacts{
+    background-color: 	#353839;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contacts-text h3{
+    color: #C7EDE6;
+    font-size: 5rem;
+}
+
+.contacts-other-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacts-other-page a{
+    text-decoration: none;
+    color: #C7EDE6;
+}
+
+
+.copy-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #C7EDE6;
+    color: #353839;
+    padding: 10px 15px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+.copy-popup.show {
+    opacity: 1;
+  }
+
+.contacts-icon {
+    height: auto;
+    width: 120px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-decoration: none;
+  }
+
+#contacts .icons{
+    text-align: center;
+}
+
+.contacts-icon:hover {
+    transform: scale(1.1);
+  }
+
+.icons a{
+    text-decoration: none;
+}
+
+@media (max-width: 1100px) {
+    .diploma{
+        max-width: 220px !important;
+    }
+
+    .certificate {
+        width: 150px !important;
+    }
+
+}
+
+
+/* Medium devices (tablets and small laptops) */
+@media (max-width: 992px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+
+    header a {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    header h4{
+        margin-block-start: 0.1rem;
+        margin-block-end: 0.1rem;
+    }
+
+    #main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        padding: 1rem;
+    }
+
+    .photo-container, .main-text {
+        width: 100%;
+        flex: unset;
+    }
+
+    .main-text h1 {
+        font-size: 2rem;
+    }
+
+    .main-text h3 {
+        font-size: 1.1rem;
+    }
+
+
+    #about{
+        padding: 0 0.5rem;
+    }
+
+    ul{
+        font-size: 0.7rem;
+    }
+
+
+    #about img{
+        max-width: 20%;
+        height: auto;
+    }
+
+    /*.certificate {*/
+    /*    width: 220px !important;*/
+    /*}*/
+
+    /*.diploma{*/
+    /*    width: 280px;*/
+    /*}*/
+
+    #skills img {
+        max-width: 5%;
+        height: auto;
+    }
+
+    #about, #skills {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contacts-other-page{
+        padding: 1rem 0;
+    }
+}
+
+
+/* Small devices (phones) */
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.3rem;
+    }
+
+    header a {
+        font-size: 0.9rem;
+        padding: 0.3rem 0;
+        margin: 0.2rem 0;
+    }
+
+    #main {
+        flex-direction: column; /* 👈 Puts image ABOVE the text */
+        padding: 1rem 0.5rem;
+        gap: 1rem;
+    }
+
+    .photo-container {
+        order: -1;
+    }
+
+    .photo {
+        max-width: 180px;
+    }
+
+    .main-text h1 {
+        font-size: 1.75rem;
+    }
+
+    .main-text h3 {
+        font-size: 1rem;
+    }
+
+    #about img{
+        max-width: 40%;
+        height: auto;
+    }
+
+    #skills img {
+        max-width: 10%;
+        height: auto;
+    }
+
+    #cv-button {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+    }
+
+    .skill-icon {
+        height: 40px;
+        margin-bottom: 2rem;
+    }
+
+    .certificate {
+        width: 120px !important;
+    }
+
+    .diploma{
+        width: 200px;
+    }
+
+    .contacts-text h3 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .contacts-icon {
+        width: 80px;
+        padding: 1rem;
+    }
+
+    .contacts-other-page{
+        padding: 3rem 0;
+        text-align: center;
+    }
+}
+
