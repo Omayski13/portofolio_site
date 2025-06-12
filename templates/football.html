@@ -10,9 +10,9 @@
         </div>
         <div class="main-text">
             <div class="main-text">
-            <h1>Hi! My name is Kristiyan</h1>
-            <h3><span id="typed-text"></span><span id="cursor">|</span></h3>
-        </div>
+                <h1>Hi! My name is Kristiyan</h1>
+                <h3><span id="typed-text"></span><span id="cursor">|</span></h3>
+            </div>
         </div>
     </section>
 
@@ -30,7 +30,7 @@
             </ul>
 
             <div class="football-cv">
-                <a id="football-cv-button">download football CV</a>
+                <a href="{% static 'CVs/Kristiyan Omayski-football CV.pdf' %}" id="football-cv-button" download>Download Football CV</a>
             </div>
         </div>
 
@@ -47,14 +47,14 @@
     </section>
 
     <section id="football-find-me">
-    
+
         <h1 class="find-me-text">Find me on the pitch</h1>
-       <iframe src="https://calendar.google.com/calendar/embed?src=175a7b8fac526ce6d381f3fb1b7058295d23edc0c750da5e1cf7badbb93e2c70%40group.calendar.google.com&ctz=Europe%2FSofia&wkst=2"
-        style="border: 0" width="820" height="450" frameborder="0" scrolling="no"></iframe>
+        <iframe src="https://calendar.google.com/calendar/embed?src=175a7b8fac526ce6d381f3fb1b7058295d23edc0c750da5e1cf7badbb93e2c70%40group.calendar.google.com&ctz=Europe%2FSofia&wkst=2"
+                style="border: 0" width="820" height="450" frameborder="0" scrolling="no"></iframe>
         <h3 class="find-me-text">This is my football calendar with places and time for my training sessions</h3>
 
     </section>
-    
+
     <section id="football-contacts">
 
         <div class="contacts-text">
@@ -85,12 +85,13 @@
         </div>
 
         <div id="copyPopup" class="copy-popup"></div>
-    
+
         <div class="contacts-other-page">
-            <a href="{% url 'main' %}"><img class="contacts-icon" src="{% static 'images/contact-icons/work-on-computer.png' %}"></a>
+            <a href="{% url 'main' %}"><img class="contacts-icon"
+                                            src="{% static 'images/contact-icons/work-on-computer.png' %}"></a>
             <a href="{% url 'main' %}"><h3>Visit main portofolio</h3></a>
         </div>
-        
+
     </section>
 
 
@@ -135,7 +136,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", type);
-        
+
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
                 const popup = document.getElementById("copyPopup");
