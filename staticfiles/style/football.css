@@ -58,7 +58,7 @@ img#football-coach-photo{
 
 img.licence{
     cursor: pointer;
-    max-height: 220px;
+    max-height: 210px;
     display: block; /* Ensures images take up full width */
     margin: 0 auto 1rem auto; /* Centers each image with spacing */
     max-width: 100%; /* Ensures images resize well */
@@ -179,8 +179,8 @@ img.udostoverenie{
         justify-content: center;
     }
 
-    .football-licences img {
-        max-width: 45%;
+    img.licence {
+        max-width: 140px;
     }
 
     .contacts-text h3 {
