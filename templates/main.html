@@ -20,7 +20,7 @@
 
         <ul>
             <li><h3>Motivated student with a strong interest in IT</h3></li>
-            <li><h3>Passion for solving problems through code, specializing in Python, Django and PostgreSQL</h3></li>
+            <li><h3>Passion for solving problems through code, specializing in Python, R and PostgreSQL</h3></li>
             <li><h3>Solid background in data analysis and marketing research</h3></li>
             <li><h3>Ex-sportsmen and a team player with strong discipline and leadership</h3></li>
             <li><h3>UEFA "C" certificated football coach</h3></li>
@@ -32,9 +32,12 @@
     <section id="skills">
         <div class="icons-container">
             <img class="skill-icon" src="{% static 'images/skills_icons/python.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/R.png' %}">
             <img class="skill-icon" src="{% static 'images/skills_icons/javascript.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/pandas.png' %}">
             <img class="skill-icon" src="{% static 'images/skills_icons/django.png' %}">
             <img class="skill-icon" src="{% static 'images/skills_icons/postgres.png' %}">
+            <img class="skill-icon" src="{% static 'images/skills_icons/aws.png' %}">
             <img class="skill-icon" src="{% static 'images/skills_icons/docker.png' %}">
             <img class="skill-icon" src="{% static 'images/skills_icons/jenkins.png' %}">
             <img class="skill-icon" src="{% static 'images/skills_icons/git-.png' %}">
@@ -209,6 +212,25 @@
                 alert("Clipboard copy failed: " + err);
             });
         }
+        
+        {#################}
+        
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector("header");
+
+        window.addEventListener("scroll", () => {
+            if (window.innerWidth > 600) return;
+    
+            if (window.scrollY > lastScrollY) {
+                // scrolling down
+                header.classList.add("hide");
+            } else {
+                // scrolling up
+                header.classList.remove("hide");
+            }
+
+            lastScrollY = window.scrollY;
+    });
 
 
     </script>

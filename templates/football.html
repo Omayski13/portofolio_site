@@ -9,11 +9,11 @@
             <img class="photo" src="{% static 'images/kristiyan-omayski-coach.jpg' %}">
         </div>
         <div class="main-text">
-            <div class="main-text">
-                <h1>Hi! My name is Kristiyan</h1>
-                <h3><span id="typed-text"></span><span id="cursor">|</span></h3>
-            </div>
-        </div>
+            <h1>Hi! My name is Kristiyan</h1>
+            <h3><span id="typed-text"></span><span id="cursor">|</span></h3>
+        </div>    
+    
+      
     </section>
 
 
@@ -104,6 +104,7 @@
             "Welcome to my football page!",
             "I'm a Football Coach at UFC \"Sofia\"."
         ];
+        
 
         let currentIndex = 0;
         let currentText = '';
@@ -189,6 +190,23 @@
                 modal.style.display = "none";
             }
         };
+        
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector("header");
+
+        window.addEventListener("scroll", () => {
+            if (window.innerWidth > 600) return;
+    
+            if (window.scrollY > lastScrollY) {
+                // scrolling down
+                header.classList.add("hide");
+            } else {
+                // scrolling up
+                header.classList.remove("hide");
+            }
+
+            lastScrollY = window.scrollY;  
+        });
 
 
     </script>
