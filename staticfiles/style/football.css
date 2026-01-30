@@ -237,11 +237,11 @@ img.udostoverenie{
         padding: 1rem 0;
     }
     img.licence{
-        max-height: 180px;
+        max-height: 150px;
     }
 
     img.udostoverenie{
-        max-width: 150px !important;
+        max-width: 120px !important;
     }
 
     .contacts-other-page{
