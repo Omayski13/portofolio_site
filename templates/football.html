@@ -11,9 +11,9 @@
         <div class="main-text">
             <h1>Hi! My name is Kristiyan</h1>
             <h3><span id="typed-text"></span><span id="cursor">|</span></h3>
-        </div>    
-    
-      
+        </div>
+
+
     </section>
 
 
@@ -30,7 +30,8 @@
             </ul>
 
             <div class="football-cv">
-                <a href="{% static 'CVs/Kristiyan Omayski-football CV.pdf' %}" id="football-cv-button" download>Download Football CV</a>
+                <a href="{% static 'CVs/Kristiyan Omayski-football CV.pdf' %}" id="football-cv-button" download>Download
+                    Football CV</a>
             </div>
         </div>
 
@@ -104,7 +105,7 @@
             "Welcome to my football page!",
             "I'm a Football Coach at UFC \"Sofia\"."
         ];
-        
+
 
         let currentIndex = 0;
         let currentText = '';
@@ -190,13 +191,20 @@
                 modal.style.display = "none";
             }
         };
-        
+
         let lastScrollY = window.scrollY;
         const header = document.querySelector("header");
 
         window.addEventListener("scroll", () => {
             if (window.innerWidth > 600) return;
-    
+
+            // ALWAYS show header at top
+            if (window.scrollY === 0) {
+                header.classList.remove("hide");
+                lastScrollY = 0;
+                return;
+            }
+
             if (window.scrollY > lastScrollY) {
                 // scrolling down
                 header.classList.add("hide");
@@ -205,7 +213,7 @@
                 header.classList.remove("hide");
             }
 
-            lastScrollY = window.scrollY;  
+            lastScrollY = window.scrollY;
         });
 
 

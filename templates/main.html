@@ -13,7 +13,7 @@
             <h3>I'm <span id="typed-text"></span><span id="cursor">|</span></h3>
         </div>
     </section>
-    
+
 
     <section id="about">
         <img id="coder-photo" src="{% static 'images/coder_png.png' %}">
@@ -62,8 +62,10 @@
 
         <div class="carousel-wrapper" id="carousel">
             <div class="carousel-track">
-                <img class="certificate" src="{% static 'images/certificates/it_certificates/programming-basics.jpeg' %}">
-                <img class="certificate" src="{% static 'images/certificates/it_certificates/programming-fundamentals.jpeg' %}">
+                <img class="certificate"
+                     src="{% static 'images/certificates/it_certificates/programming-basics.jpeg' %}">
+                <img class="certificate"
+                     src="{% static 'images/certificates/it_certificates/programming-fundamentals.jpeg' %}">
                 <img class="certificate" src="{% static 'images/certificates/it_certificates/python-advanced.jpeg' %}">
                 <img class="certificate" src="{% static 'images/certificates/it_certificates/python-oop.jpeg' %}">
                 <img class="certificate" src="{% static 'images/certificates/it_certificates/html-css.jpeg' %}">
@@ -73,7 +75,8 @@
                 <img class="certificate" src="{% static 'images/certificates/it_certificates/django-basics.jpeg' %}">
                 <img class="certificate" src="{% static 'images/certificates/it_certificates/django-advanced.jpeg' %}">
                 <img class="certificate" src="{% static 'images/certificates/it_certificates/devops.jpeg' %}">
-                <img class="certificate" src="{% static 'images/certificates/it_certificates/containers-and-cloud.jpeg' %}">
+                <img class="certificate"
+                     src="{% static 'images/certificates/it_certificates/containers-and-cloud.jpeg' %}">
             </div>
         </div>
 
@@ -117,7 +120,8 @@
         <div id="copyPopup" class="copy-popup"></div>
 
         <div class="contacts-other-page">
-            <a href="{% url 'football' %}"><img class="contacts-icon" src="{% static 'images/contact-icons/football.png' %}"></a>
+            <a href="{% url 'football' %}"><img class="contacts-icon"
+                                                src="{% static 'images/contact-icons/football.png' %}"></a>
             <a href="{% url 'football' %}"><h3>Visit my football portofolio</h3></a>
         </div>
 
@@ -212,15 +216,22 @@
                 alert("Clipboard copy failed: " + err);
             });
         }
-        
+
         {#################}
-        
+
         let lastScrollY = window.scrollY;
         const header = document.querySelector("header");
 
         window.addEventListener("scroll", () => {
             if (window.innerWidth > 600) return;
-    
+
+            // ALWAYS show header at top
+            if (window.scrollY === 0) {
+                header.classList.remove("hide");
+                lastScrollY = 0;
+                return;
+            }
+
             if (window.scrollY > lastScrollY) {
                 // scrolling down
                 header.classList.add("hide");
@@ -230,7 +241,7 @@
             }
 
             lastScrollY = window.scrollY;
-    });
+        });
 
 
     </script>
