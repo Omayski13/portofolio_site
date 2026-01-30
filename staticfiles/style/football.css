@@ -205,7 +205,7 @@ img.udostoverenie{
 }
 
 /* ---- Phone (up to 768px) ---- */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     #football-main {
         display: flex;
         flex-direction: column;
@@ -237,11 +237,11 @@ img.udostoverenie{
         padding: 1rem 0;
     }
     img.licence{
-        max-height: 120px;
+        max-height: 180px;
     }
 
     img.udostoverenie{
-        max-width: 120px !important;
+        max-width: 150px !important;
     }
 
     .contacts-other-page{
