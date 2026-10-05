@@ -1,4 +1,4 @@
-# Kristiyan Omayski Portfolio
+# 👨‍💻 Kristiyan Omayski Portfolio
 
 A personal portfolio website built with Django, designed to showcase my background, skills, certifications, and professional profile as a Data Analyst, Marketing Researcher, and Python Developer.
 
